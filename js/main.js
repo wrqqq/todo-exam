@@ -17,8 +17,9 @@ function getTask (array) {
 }
 var arrTask = getTask(tasks);
 function insertTask () {
-	var elemTask = document.querySelector('#taskArr');
-	elemTask.innerHTML = 'Например, ' + arrTask;
+ 		var elemTask = document.querySelector('#taskArr');
+		elemTask.innerHTML = 'Например, ' + arrTask; 	
+		elemTask.className = "animated fadeIn";	
 }
 insertTask();
 
@@ -93,7 +94,11 @@ li.addEventListener('click', function (e) {
 			var taskTime = getTime();
 			this.querySelector('.time').innerHTML = taskTime;
     } else if (hasClass(e.target, 'del')) {
-    	this.remove();	
+    	this.className = "animated fadeOut";
+    	var _this = this;
+    	setTimeout(function() {
+    		_this.remove();
+    	}, 1000)
     } else if (hasClass(e.target, 'complete')) {
     	this.className = "complete_task";
     }

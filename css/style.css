@@ -12,6 +12,7 @@ body {
 }
 label {
 	font-size: 21px;
+	margin-left: 70px;
 }
 label input {
 	height: 40px;
