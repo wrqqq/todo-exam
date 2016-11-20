@@ -105,20 +105,7 @@ li.addEventListener('click', function (e) {
 }, false);
 
 })
-/*var editBtn = document.getElementsByClassName('edit');
-	editBtn.addEventListener('click', function() {
-		validate(editInp, this);
-		if (incorrect) {
-			return;
-		}
-		this.parentNode.firstChild.innerHTML = editInp.value;
-		editInp.value = '';
-		
-	})
-	del.addEventListener('click', function() {
-        this.parentNode.remove();
-		
-	})	*/
+
 
 
 
