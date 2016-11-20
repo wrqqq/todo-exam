@@ -1,0 +1,111 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+.content {
+	width: 800px;
+	margin: 0 auto;
+	font-family: 'Roboto', sans-serif;
+	padding-top: 100px;
+	color: #015367;
+}
+label {
+	font-size: 21px;
+}
+label input {
+	height: 40px;
+	font-size: 22px;
+	outline: none;
+	border-radius: 3px;
+	width: 400px;
+	padding-left: 16px;
+	border: none;
+	-webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+margin-left: 20px;
+}
+#btn {
+	background-color: #f4f8ff;
+	height: 40px;
+	border: none;
+	margin-left: 20px;
+	width: 100px;
+	outline: none;
+	color: #3c3e42;
+	font-size: 23px;
+	cursor: pointer;
+	transition: background-color 0.5s ease;
+}
+#btn:hover {
+	background-color: #eaf1fc;
+}
+li {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	position: relative;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+h2 {
+	text-align: center;
+	font-size: 32px;
+	margin-bottom: 100px;
+	color: #000;
+}
+.task {
+	width: 200px;
+	display: inline-block;	
+}
+.text {
+	display: inline-block;
+	width: 400px;
+	margin-left: 20px;
+}
+.edit, .del, .complete {
+	content: '';
+	width: 24px;
+	height: 24px;
+	background: #fff url('../images/settings-work-tool.png') bottom left no-repeat;
+	border: none;
+	outline: none;
+	padding: 0;
+	margin-right: 6px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.edit {
+	margin-left: 10px;
+	position: absolute;
+	right: 15px;
+	top: 11px;
+	display: none;
+	transition: 1s;
+	opacity: 0;
+}
+ul {
+	list-style: none;
+}
+.del {
+	background: #fff url('../images/delete.png') bottom left no-repeat;	
+}
+.complete {
+	background: #fff url('../images/done-tick.png') bottom left no-repeat;
+}
+.complete_task {
+	opacity: 0.2;
+	position: relative;
+}
+.complete_task:after {
+	width: 760px;
+	position: absolute;
+	right: 0;
+	content: '';
+	height: 1px;
+	background-color: #000;
+	bottom: 20px;
+}
