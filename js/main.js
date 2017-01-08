@@ -1,4 +1,6 @@
 
+
+
 var x = document.getElementById("input");
 var b = document.getElementById("btn");
 var ul = document.createElement("ul");
@@ -107,8 +109,7 @@ li.addEventListener('click', function (e) {
 })
 
 
-
-
+});
 
 
 

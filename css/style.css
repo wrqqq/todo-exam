@@ -6,7 +6,6 @@ body {
 .content {
 	width: 800px;
 	margin: 0 auto;
-	font-family: 'Roboto', sans-serif;
 	padding-top: 100px;
 	color: #015367;
 }
@@ -93,12 +92,16 @@ ul {
 }
 .del {
 	background: #fff url('../images/delete.png') bottom left no-repeat;	
+	display: inline-block;
+	margin-left: 60px;
+	position: relative;
+	z-index: 1;
 }
 .complete {
 	background: #fff url('../images/done-tick.png') bottom left no-repeat;
 }
 .complete_task {
-	opacity: 0.2;
+	opacity: 0.8;
 	position: relative;
 }
 .complete_task:after {
@@ -109,4 +112,11 @@ ul {
 	height: 1px;
 	background-color: #000;
 	bottom: 20px;
+}
+.todo {
+	position: relative;
+	z-index: 1;
+	font-size: 25px;
+	display: inline-block;
+	width: 300px;
 }
