@@ -7,15 +7,7 @@ $(function() {
         title: "Новая задача...",
         done: false
       };
-    },  
-     initialize: function() {
-      if (!this.get("title")) {
-        this.set({"title": this.defaults.title});
-      }
-    }, 
-    clear: function() {
-      this.destroy();
-    },       
+    }  
   });
 
 
@@ -44,7 +36,6 @@ $(function() {
 
     initialize: function() {
       this.listenTo(this.model, 'change', this.render);
-      this.listenTo(this.model, 'destroy', this.remove);
     },
 
 
@@ -53,8 +44,8 @@ $(function() {
       return this;
     },
     clear: function() {
-      console.log(this.model);
-      this.model.clear();
+      this.model.destroy();
+      this.remove();
     }
 
 
@@ -69,12 +60,11 @@ $(function() {
       "click #btn": "clearAll",
     },
     initialize: function() {
-      this.input = this.$("#input");
-      console.log(Todos);
+      this.$input = this.$("#input");
+      this.collection = Todos;
       this.listenTo(Todos, 'add', this.addOne);
       this.listenTo(Todos, 'reset', this.addAll);
       this.listenTo(Todos, 'all', this.render);
-
 
       Todos.fetch();
           },
@@ -83,26 +73,26 @@ $(function() {
 
     addOne: function(todo) {
       var view = new TodoView({model: todo});
-      console.log('ok' + this);
+      Todos.add(todo);
       this.$("#todo-list").append(view.render().el);
     },
     addAll: function() {
       Todos.each(this.addOne);
     },
     clearAll: function() {
-      Todos.each(this.removeOne);
-    },
-    removeOne: function(todo) {
-      todo.destroy();
+      this.collection.reset();
+      localStorage.removeItem("todos-backbone");
+      this.$('#todo-list').html('');
+
     },
     createOnEnter: function(e) {
       if (e.keyCode != 13) return;
-      if (!this.input.val().trim()) {
+      if (!this.$input.val().trim()) {
         alert('Введите значение');
         return;
       }
-      Todos.create({title: this.input.val()});
-      this.input.val('');
+      Todos.create({title: this.$input.val()});
+      this.$input.val('');
     },
 
   });
